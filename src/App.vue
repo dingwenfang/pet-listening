@@ -1,17 +1,16 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <b-container id="app">
+    <PetAudio/>
+  </b-container>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import PetAudio from './components/PetAudio.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    PetAudio
   }
 }
 </script>
