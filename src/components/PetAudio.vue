@@ -17,54 +17,37 @@ export default {
   data: function() {
       return {
           audios: [],
-          /*items: [
-              {
-                  title: "02_U1_Ex2",
-                  source: "./audio/02_U1_Ex2.mp3",
-                  track: "<p>track for audio 1</p>",
-              },
-              {
-                  title: "03_U1_Ex3",
-                  source: "./audio/03_U1_Ex3.mp3",
-                  track: "<p>track for audio 2</p>",
-              },
-              {
-                  title: "04_U1_Ex5",
-                  source: "./audio/04_U1_Ex5.mp3",
-                  track: "<p>track for audio 2</p>",
-              },
-              {
-                  title: "05_U2_Ex2",
-                  source: "./audio/05_U2_Ex2.mp3",
-                  track: "<p>track for audio 2</p>",
-              }
-          ],*/
-          itemsInit: [
-              {
-                  title: "02_U1_Ex2",
-                  source: "/audio/02_U1_Ex2.mp3",
-                  trackUrl: "/track/t02.txt",
-                  //track: "<p>track for audio 1</p>",
-              },
-          ],
           itemsFetched: [],
       }      
   },
   computed: {
     items: function() {
-      /*if (this.itemsFetched.length === 0) {
-        return this.itemsInit;
-      } else {
-        return this.itemsFetched;
-      }*/
-      return this.itemsFetched;
+      let items = []
+      let title = "Track 01_Copyright"
+      let source = "/audio/" + title + ".mp3"
+      let trackUrl = ''
+      items.push({title, source, trackUrl})
+      var i
+      for (i = 2; i <= 78; i++) {
+        if (i<10) {
+          title = "Track 0" + i
+          source = "/audio/" + title + ".mp3"
+          trackUrl = "/track/t0" + i + ".txt"
+        } else {
+          title = "Track " + i
+          source = "/audio/" + title + ".mp3"
+          trackUrl = "/track/t" + i + ".txt"
+        }
+        items.push({title, source, trackUrl})
+      }
+      return items
 
     }
 
   },
   created: function () {
     // `this` points to the vm instance
-   this.axios.get('/audio').then((resp) => {
+   /*this.axios.get('/audio').then((resp) => {
         console.log(resp.data);
         this.audios = resp.data;
         const it = this.audios.values();
@@ -76,26 +59,14 @@ export default {
           title = parts[0];
           source = "/audio/" + fileName;
           trackUrl = "/track/t" + parts[0].substr(6,2) + ".txt";
-          /*this.axios.get(trackUrl).then((resp_t) => {
-            console.log(resp_t.data);
-            track = resp_t.data;
-          }).catch(() => {
-            //console.log(err.msg);
-          })*/
           this.itemsFetched.push({ title, source, trackUrl});
           cur = it.next();
         }
       }).catch((err) => {
         console.log(err);
-        //this.itemsFetched = [];
-        /*this.$bvToast.toast(`${err.message}`, {
-          title: 'Fail to get audios',
-          variant: 'danger',
-          solid: true,
-        });*/
       });
     console.log("out");
-    console.log(this.itemsFetched);
+    console.log(this.itemsFetched);*/
   }
   
 }
