@@ -1,0 +1,9 @@
+Track 45
+1 You may be right, but...
+2 I'm not really sure about that.
+3 Yes, I totally agree with you.
+4 I don't think so because...
+5 That's not the way I see it.
+6 I don't agree at all.
+7 That's true.
+8 I think so too.

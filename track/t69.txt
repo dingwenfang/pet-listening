@@ -1,0 +1,13 @@
+Track 69
+Examiner: What's your name?
+Maria:
+My name's Maria.
+Examiner: What's your surname?
+Maria:
+It's Moretti.
+Examiner: Where do you come from?
+Maria:
+I come from Rome, in Italy.
+Examiner: Do you work, or are you a student?
+Maria:
+I'm a student.
